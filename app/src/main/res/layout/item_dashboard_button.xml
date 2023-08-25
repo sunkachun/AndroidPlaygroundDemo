@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboardButtonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#00000000">
+
+        <ImageButton
+            android:id="@+id/btnImage"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:scaleType="fitCenter"
+            android:background="#00000000"
+            tools:src="@drawable/ic_dashboard_button_flower"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#FFC08000" />
+
+        <TextView
+            android:id="@+id/btnTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnImage"
+            app:layout_constraintStart_toStartOf="@id/btnImage"
+            app:layout_constraintEnd_toEndOf="@id/btnImage"
+            android:textSize="18sp"
+            tools:text="something"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

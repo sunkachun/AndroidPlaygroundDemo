@@ -1,42 +1,47 @@
 package com.example.androidplaygrounddemo.ui.dashboard
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
+import android.util.Log
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.androidplaygrounddemo.R
 import com.example.androidplaygrounddemo.databinding.FragmentDashboardBinding
+import com.example.presentation.dashboard.DashboardNavigationAction
+import com.example.presentation.dashboard.DashboardViewModel
+import com.example.presentation.dashboard.model.DashboardMenuItem
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : DaggerFragment(R.layout.fragment_dashboard) {
 
-    private var _binding: FragmentDashboardBinding? = null
+    @Inject
+    lateinit var factory: ViewModelProvider.Factory
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private val ui by viewBinding<FragmentDashboardBinding>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this)[DashboardViewModel::class.java]
+    private val viewModel: DashboardViewModel by viewModels { factory }
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    private val buttonAdapter = DashboardButtonAdapter(::handleNavigation)
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onStart() {
+        super.onStart()
+        ui.dashboardButtons.adapter = buttonAdapter
+        observeViewModel()
+    }
+    private fun observeViewModel() {
+        viewModel.buttons.observe(viewLifecycleOwner, ::initButton)
+    }
+    private fun initButton(buttons: List<DashboardMenuItem>) {
+        buttonAdapter.submitList(buttons)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun handleNavigation(dashboardMenuItem: DashboardMenuItem) {
+        Log.d("chris", "dashboardMenuItem: ${dashboardMenuItem}")
+        val action = when (dashboardMenuItem.navigationAction) {
+            DashboardNavigationAction.OpenWeather -> DashboardFragmentDirections.actionDashboardToWeatherFragment()
+            else -> DashboardFragmentDirections.actionDashboardToWeatherFragment()
+        }
+        findNavController().navigate(action)
     }
 }
