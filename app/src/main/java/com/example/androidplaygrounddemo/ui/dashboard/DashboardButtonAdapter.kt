@@ -25,7 +25,7 @@ class DashboardButtonAdapter constructor(
     inner class ViewHolder(private val ui: ItemDashboardButtonBinding) : RecyclerView.ViewHolder(ui.root) {
 
         init {
-            ui.dashboardButtonContainer.setOnClickListener {
+            ui.btnImage.setOnClickListener {
                 onButtonClicked(currentList[absoluteAdapterPosition])
             }
         }

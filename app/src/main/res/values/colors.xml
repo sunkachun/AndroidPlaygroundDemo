@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="weather_forecast">#abaed3</color>
+    <color name="weather_forecast_card_background">#7ea7fb</color>
+    <color name="weather_forecast_card_text">#F9CA2B</color>
 </resources>

@@ -3,12 +3,19 @@ package com.example.androidplaygrounddemo.ui.application
 import android.app.Application
 import android.content.Context
 import androidx.work.WorkManager
+import com.example.data.AppDataModule
+import com.example.data.network.di.NetworkModule
 import dagger.Module
 import dagger.Provides
 import java.time.Clock
 import java.time.ZoneId
 
-@Module
+@Module(
+    includes = [
+        AppDataModule::class,
+        NetworkModule::class,
+    ]
+)
 class MyApplicationModule {
 
     @Provides

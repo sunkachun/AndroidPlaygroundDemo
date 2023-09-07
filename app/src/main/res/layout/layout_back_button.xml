@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/backButton"
+    android:layout_width="match_parent"
+    android:layout_height="105dp"
+    android:backgroundTint="#00000000"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:strokeColor="@color/teal_200"
+    app:strokeWidth="2dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_back"
+        app:tint="@color/teal_200" />
+</com.google.android.material.card.MaterialCardView>

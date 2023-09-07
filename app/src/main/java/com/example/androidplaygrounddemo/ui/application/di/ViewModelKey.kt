@@ -1,4 +1,4 @@
-package com.example.androidplaygrounddemo.binding
+package com.example.androidplaygrounddemo.ui.application.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

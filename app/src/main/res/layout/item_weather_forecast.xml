@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="forecast"
+            type="com.example.presentation.weather.weatherforecast.model.WeatherForecastDisplay" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/weather_forecast_card_background"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/weather_forecast_card_background"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/weatherForecastDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#F9CA2B"
+                android:textSize="@dimen/title"
+                android:text="@{forecast.forecastDisplayTitle}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="20240520" />
+
+            <ImageView
+                android:id="@+id/weatherForecastIcon"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:background="@color/weather_forecast"
+                android:src="@drawable/ic_weather_air"
+                app:weatherIcon="@{forecast.forecastIcon}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weatherForecastDate" />
+
+            <TextView
+                android:id="@+id/weatherForecastMinTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#F9CA2B"
+                android:textSize="@dimen/title"
+                android:text="@{forecast.forecastDisplayMinTemp}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weatherForecastIcon"
+                tools:text="Min Temp: 20" />
+
+            <TextView
+                android:id="@+id/weatherForecastMaxTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#F9CA2B"
+                android:textSize="@dimen/title"
+                android:text="@{forecast.forecastDisplayMaxTemp}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weatherForecastMinTemp"
+                tools:text="Max Temp: 26" />
+
+            <TextView
+                android:id="@+id/weatherForecastDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minLines="7"
+                android:padding="5dp"
+                android:textColor="#F9CA2B"
+                android:textSize="@dimen/desp"
+                android:text="@{forecast.forecastDisplayWeather}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weatherForecastMaxTemp"
+                tools:text="密雲，有頻密狂風大驟雨及雷暴，有風暴潮。海有極巨浪及湧浪。" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

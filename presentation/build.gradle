@@ -32,6 +32,8 @@ android {
 
 dependencies {
 
+    implementation project(":domain")
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
@@ -57,4 +59,10 @@ dependencies {
     // Livedata
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
+
+    // Timber logging
+    implementation "com.jakewharton.timber:timber:5.0.1"
+
+    // Timber logging
+    implementation "com.jakewharton.timber:timber:5.0.1"
 }

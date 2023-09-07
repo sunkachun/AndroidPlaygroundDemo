@@ -1,10 +1,8 @@
 package com.example.androidplaygrounddemo.ui.dashboard.di
 
-import android.app.Activity
 import androidx.lifecycle.ViewModel
-import com.example.androidplaygrounddemo.MainActivity
-import com.example.androidplaygrounddemo.binding.ViewModelKey
-import com.example.androidplaygrounddemo.binding.ViewModelModule
+import com.example.androidplaygrounddemo.ui.application.di.ViewModelKey
+import com.example.androidplaygrounddemo.ui.application.di.ViewModelModule
 import com.example.androidplaygrounddemo.ui.dashboard.AppDashboardButtonsProvider
 import com.example.androidplaygrounddemo.ui.dashboard.DashboardFragment
 import com.example.presentation.dashboard.DashboardButtonsProvider
@@ -30,8 +28,5 @@ interface DashboardFragmentModule {
 
         @Binds
         fun bindButtonProvider(provider: AppDashboardButtonsProvider): DashboardButtonsProvider
-
-        @Binds
-        fun bindActivity(activity: MainActivity): Activity
     }
 }

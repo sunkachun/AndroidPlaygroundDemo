@@ -1,6 +1,5 @@
 package com.example.androidplaygrounddemo.ui.dashboard
 
-import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -37,10 +36,10 @@ class DashboardFragment : DaggerFragment(R.layout.fragment_dashboard) {
     }
 
     private fun handleNavigation(dashboardMenuItem: DashboardMenuItem) {
-        Log.d("chris", "dashboardMenuItem: ${dashboardMenuItem}")
+
         val action = when (dashboardMenuItem.navigationAction) {
-            DashboardNavigationAction.OpenWeather -> DashboardFragmentDirections.actionDashboardToWeatherFragment()
-            else -> DashboardFragmentDirections.actionDashboardToWeatherFragment()
+            DashboardNavigationAction.OpenWeather -> DashboardFragmentDirections.actionDashboardFragmentToWeatherFragment()
+            else -> DashboardFragmentDirections.actionDashboardToFlowerFragment()
         }
         findNavController().navigate(action)
     }

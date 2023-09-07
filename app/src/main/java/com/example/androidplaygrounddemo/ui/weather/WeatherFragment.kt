@@ -1,18 +1,24 @@
 package com.example.androidplaygrounddemo.ui.weather
 
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import android.os.Bundle
+import android.view.View
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.androidplaygrounddemo.R
-import com.example.presentation.dashboard.DashboardViewModel
+import com.example.androidplaygrounddemo.databinding.FragmentWeatherBinding
 import dagger.android.support.DaggerFragment
-import javax.inject.Inject
 
 class WeatherFragment : DaggerFragment(R.layout.fragment_weather) {
 
-    @Inject
-    lateinit var factory: ViewModelProvider.Factory
+    private val ui by viewBinding<FragmentWeatherBinding>()
 
-    private val viewModel: DashboardViewModel by viewModels { factory }
-
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ui.weatherForecastEntry.setOnClickListener {
+            findNavController().navigate(WeatherFragmentDirections.actionWeatherFragmentToWeatherForecastFragment())
+        }
+        ui.backButtonLayout.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 }

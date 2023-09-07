@@ -14,14 +14,14 @@ class AppDashboardButtonsProvider @Inject constructor(
     override fun getDashboardButtons(): List<DashboardMenuItem> {
         return listOf(
             DashboardMenuItem(
-                "Flower",
-                R.drawable.ic_dashboard_button_flower,
-                DashboardNavigationAction.OpenFlower
-            ),
-            DashboardMenuItem(
                 "Weather",
                 R.drawable.ic_dashboard_button_sunny,
                 DashboardNavigationAction.OpenWeather
+            ),
+            DashboardMenuItem(
+                "Flower",
+                R.drawable.ic_dashboard_button_flower,
+                DashboardNavigationAction.OpenFlower
             ),
         )
     }
