@@ -4,4 +4,5 @@ sealed interface DashboardNavigationAction {
 
     object OpenFlower: DashboardNavigationAction
     object OpenWeather: DashboardNavigationAction
+    object OpenToDoList: DashboardNavigationAction
 }

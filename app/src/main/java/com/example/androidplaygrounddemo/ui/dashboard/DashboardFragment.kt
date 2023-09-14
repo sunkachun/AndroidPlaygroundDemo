@@ -39,6 +39,7 @@ class DashboardFragment : DaggerFragment(R.layout.fragment_dashboard) {
 
         val action = when (dashboardMenuItem.navigationAction) {
             DashboardNavigationAction.OpenWeather -> DashboardFragmentDirections.actionDashboardFragmentToWeatherFragment()
+            DashboardNavigationAction.OpenToDoList -> DashboardFragmentDirections.actionDashboardFragmentToToDoListFragment()
             else -> DashboardFragmentDirections.actionDashboardToFlowerFragment()
         }
         findNavController().navigate(action)

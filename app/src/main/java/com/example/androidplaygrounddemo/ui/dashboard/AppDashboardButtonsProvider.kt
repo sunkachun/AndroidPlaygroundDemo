@@ -23,6 +23,11 @@ class AppDashboardButtonsProvider @Inject constructor(
                 R.drawable.ic_dashboard_button_flower,
                 DashboardNavigationAction.OpenFlower
             ),
+            DashboardMenuItem(
+                "To Do List",
+                R.drawable.ic_dashboard_to_do,
+                DashboardNavigationAction.OpenToDoList
+            )
         )
     }
 }
