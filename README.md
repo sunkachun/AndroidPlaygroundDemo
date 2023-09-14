@@ -16,10 +16,10 @@ A domain layer is the use case.
 A data layer with a repository local using Room for To-Do List and weather side use remote.
 
 ## General
-Coroutines, RxJava, RxKotlin, Unit test(Junit5, mockito), Jetpack, Dagger
+Coroutines, RxJava, RxKotlin, Unit test(Junit5, mockito), Jetpack, Dagger, DI, ViewBinding, DataBinding
 
 ## To-Do List
 Room, Flow
 
 ## Weather
-Okhttp, Retrofit
+Okhttp, Retrofit, Gson
