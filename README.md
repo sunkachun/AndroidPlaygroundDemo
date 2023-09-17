@@ -1,9 +1,9 @@
 # Sample Android App using Clean Architecture and Modulization
 
-This is an Android App that uses clean architecture and mvvm to write.
+This is an Android App that is the show case of clean architecture and MVVM to write.
 It contains modulization
-## Feature
 
+## Feature
 To-do list, weather
 
 ## Library
