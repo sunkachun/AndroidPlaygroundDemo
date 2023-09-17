@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "note")
 data class ToDoNoteRoomEntity(
-    @PrimaryKey val id: Int? = null,
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
     val title: String,
     val description:  String,
     val recordTime: Long,

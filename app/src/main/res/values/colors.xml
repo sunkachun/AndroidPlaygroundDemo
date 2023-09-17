@@ -10,4 +10,5 @@
     <color name="weather_forecast">#abaed3</color>
     <color name="weather_forecast_card_background">#7ea7fb</color>
     <color name="weather_forecast_card_text">#F9CA2B</color>
+    <color name="light_blue">#42A4EB</color>
 </resources>

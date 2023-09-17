@@ -19,7 +19,7 @@ interface ToDoNoteDao {
     fun getNotes(): Flow<List<ToDoNoteRoomEntity>>
 
     @Query("SELECT * FROM note WHERE id = :id")
-    suspend fun getNoteById(id: Int): ToDoNoteRoomEntity?
+    fun getNoteById(id: Int): ToDoNoteRoomEntity?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: ToDoNoteRoomEntity)

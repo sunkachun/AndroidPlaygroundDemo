@@ -9,7 +9,7 @@ import com.example.data.todonote.model.local.ToDoNoteRoomEntity
 
 @Database(
     entities = [ToDoNoteRoomEntity::class],
-    version = 1
+    version = 3
 )
 abstract class AppDatabase: RoomDatabase() {
 

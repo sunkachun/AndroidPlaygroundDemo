@@ -15,7 +15,7 @@ class RoomToDoNoteRepository @Inject constructor(
         return dao.getNotes().map { entities -> entities.map(mapper::mapToToDoNote) }
     }
 
-    override suspend fun getNoteById(id: Int): ToDoNote? {
+    override fun getNoteById(id: Int): ToDoNote? {
         return dao.getNoteById(id)?.let { mapper.mapToToDoNote(it) }
     }
 
@@ -23,7 +23,10 @@ class RoomToDoNoteRepository @Inject constructor(
         dao.insertNote(mapper.mapToToDoNoteEntity(note))
     }
 
-    override suspend fun deleteNote(note: ToDoNote) {
-        dao.deleteNote(mapper.mapToToDoNoteEntity(note))
+    override suspend fun deleteNote(id: Int) {
+        val item = id.let { dao.getNoteById(it) }
+        if (item != null) {
+            dao.deleteNote(item)
+        }
     }
 }

@@ -7,9 +7,9 @@ interface ToDoNoteRepository {
 
     fun getNotes(): Flow<List<ToDoNote>>
 
-    suspend fun getNoteById(id: Int): ToDoNote?
+    fun getNoteById(id: Int): ToDoNote?
 
     suspend fun insertNote(note: ToDoNote)
 
-    suspend fun deleteNote(note: ToDoNote)
+    suspend fun deleteNote(id: Int)
 }

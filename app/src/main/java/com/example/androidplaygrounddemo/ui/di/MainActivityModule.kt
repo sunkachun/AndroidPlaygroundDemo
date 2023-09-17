@@ -4,6 +4,7 @@ import com.example.androidplaygrounddemo.MainActivity
 import com.example.androidplaygrounddemo.binding.scope.ActivityScope
 import com.example.androidplaygrounddemo.ui.dashboard.di.DashboardFragmentModule
 import com.example.androidplaygrounddemo.ui.flower.di.FlowerFragmentModule
+import com.example.androidplaygrounddemo.ui.todolist.detail.di.ToDoDetailsFragmentModule
 import com.example.androidplaygrounddemo.ui.todolist.di.ToDoListFragmentModule
 import com.example.androidplaygrounddemo.ui.weather.di.WeatherFragmentModule
 import com.example.androidplaygrounddemo.ui.weather.weatherforecast.di.WeatherForecastFragmentModule
@@ -20,6 +21,7 @@ interface MainActivityModule {
         modules = [
             DashboardFragmentModule::class,
             ToDoListFragmentModule::class,
+            ToDoDetailsFragmentModule::class,
             FlowerFragmentModule::class,
             Bindings::class,
             WeatherFragmentModule::class,

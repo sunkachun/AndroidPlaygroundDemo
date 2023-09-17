@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.presentation.todolist.model.ToDoDisplayItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:checked="@{item.completed}"
+                app:layout_constraintBottom_toTopOf="@+id/toDoListTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/toDoListTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.title}"
+                android:maxLines="3"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox"
+                app:layout_constraintEnd_toStartOf="@+id/editItem"
+                app:layout_constraintStart_toEndOf="@+id/checkbox"
+                app:layout_constraintTop_toTopOf="@+id/checkbox" />
+
+            <ImageView
+                android:id="@+id/editItem"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintBottom_toTopOf="@+id/deleteItem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toDoListTitle"
+                app:layout_constraintTop_toTopOf="@+id/toDoListTitle" />
+
+            <ImageView
+                android:id="@+id/deleteItem"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_delete"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/toDoListTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toDoListTitle"
+                app:layout_constraintTop_toBottomOf="@+id/editItem" />
+
+            <TextView
+                android:id="@+id/toDoListTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.recordTime}"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+

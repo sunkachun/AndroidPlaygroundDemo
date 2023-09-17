@@ -8,7 +8,7 @@ class GetToDoItem @Inject constructor(
     private val repository: ToDoNoteRepository,
 ) {
 
-    suspend operator fun invoke(id: Int): ToDoNote? {
+    operator fun invoke(id: Int): ToDoNote? {
         return repository.getNoteById(id)
     }
 }

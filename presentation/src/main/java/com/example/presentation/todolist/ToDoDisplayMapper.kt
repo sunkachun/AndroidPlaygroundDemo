@@ -2,6 +2,7 @@ package com.example.presentation.todolist
 
 import com.example.domain.note.model.ToDoNote
 import com.example.presentation.todolist.model.ToDoDisplayItem
+import java.util.Date
 import javax.inject.Inject
 
 class ToDoDisplayMapper @Inject constructor() {
@@ -21,7 +22,7 @@ class ToDoDisplayMapper @Inject constructor() {
             id = id,
             title = title,
             description = description,
-            recordTime = recordTime.toString(),
+            recordTime = Date(recordTime).toString(),
             completed = completed
         )
     }

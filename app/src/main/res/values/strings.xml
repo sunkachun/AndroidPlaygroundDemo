@@ -3,4 +3,6 @@
     <string name="title_to_do_list">To Do List</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_to_do_detail_title">To Do Title</string>
+    <string name="title_to_do_detail_description">To Do Description</string>
 </resources>

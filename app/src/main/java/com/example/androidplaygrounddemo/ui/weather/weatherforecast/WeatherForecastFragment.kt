@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.androidplaygrounddemo.R
 import com.example.androidplaygrounddemo.databinding.FragmentWeatherForecastBinding
@@ -31,6 +32,9 @@ class WeatherForecastFragment : DaggerFragment(R.layout.fragment_weather_forecas
     override fun onStart() {
         super.onStart()
         observeViewModel()
+        ui.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroy() {
