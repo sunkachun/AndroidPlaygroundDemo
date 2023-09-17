@@ -11,6 +11,7 @@ import com.example.presentation.todolist.model.ToDoDisplayItem
 
 class ToDoListAdapter(
     private val onEditClicked: (ToDoDisplayItem) -> Unit,
+    private val onItemChecked: (ToDoDisplayItem) -> Unit,
     private val onDeleteClicked: (ToDoDisplayItem) -> Unit,
 ) : ListAdapter<ToDoDisplayItem, ViewHolder>(SimpleItemDiff { recordTime }) {
 
@@ -29,6 +30,7 @@ class ToDoListAdapter(
             ui.item = toDoListItem
             ui.editItem.setOnClickListener { onEditClicked(toDoListItem) }
             ui.deleteItem.setOnClickListener { onDeleteClicked(toDoListItem) }
+            ui.checkbox.setOnClickListener { onItemChecked(toDoListItem.copy(completed = ui.checkbox.isChecked)) }
         }
     }
 }
